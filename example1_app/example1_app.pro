@@ -1,14 +1,15 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2016-11-13T14:22:32
+# Project created by QtCreator 2016-10-06T10:53:51
 #
 #-------------------------------------------------
 
 QT       += core gui
-CONFIG += c++11
+
+CONFIG += c++11 c++14
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = example_app2
+TARGET = example1_app
 TEMPLATE = app
 
 
@@ -19,6 +20,6 @@ HEADERS  += mainwindow.h
 
 FORMS    += mainwindow.ui
 
-PROJNAME = example_app2
+PROJNAME = example1_app
 INSTTYPE = APP
 include(RobotSDK_Main.pri)

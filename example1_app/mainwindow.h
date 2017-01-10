@@ -13,17 +13,14 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
-    Edge edge;
     ~MainWindow();
-
-public slots:
-    void setSimuSlot();
-
-signals:
-    void setSimuStartTimeSignal(QTime starttime);
-
+    Edge edge;
 private:
     Ui::MainWindow *ui;
+public slots:
+    void setSimuSlot();
+signals:
+    void setSimuStartTimeSignal(QTime starttime);
 };
 
 #endif // MAINWINDOW_H
