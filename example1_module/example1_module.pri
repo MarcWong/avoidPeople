@@ -24,7 +24,11 @@ SOURCES += \
 	./Algorithm/ProcessorNew/ProcessorMulti/Edit/ProcessorMulti_Algorithm_ProcessorNew_PrivFunc.cpp	\
 	./Algorithm/ProcessorNew/ProcessorMulti/NoEdit/ProcessorMulti_Algorithm_ProcessorNew_PrivCoreFunc.cpp	\
 	./Algorithm/Deadreckoning/ProcessorNew/ProcessorMulti/Edit/ProcessorMulti_Algorithm_Deadreckoning_ProcessorNew_PrivFunc.cpp	\
-	./Algorithm/Deadreckoning/ProcessorNew/ProcessorMulti/NoEdit/ProcessorMulti_Algorithm_Deadreckoning_ProcessorNew_PrivCoreFunc.cpp	
+	./Algorithm/Deadreckoning/ProcessorNew/ProcessorMulti/NoEdit/ProcessorMulti_Algorithm_Deadreckoning_ProcessorNew_PrivCoreFunc.cpp	\
+	./Algorithm/DeadReckoning/ProcessorNewNew/ProcessorMulti/Edit/ProcessorMulti_Algorithm_DeadReckoning_ProcessorNewNew_PrivFunc.cpp	\
+	./Algorithm/DeadReckoning/ProcessorNewNew/ProcessorMulti/NoEdit/ProcessorMulti_Algorithm_DeadReckoning_ProcessorNewNew_PrivCoreFunc.cpp	\
+	./Algorithm/Deadreckoning/ProcessorNewNew/ProcessorMulti/Edit/ProcessorMulti_Algorithm_Deadreckoning_ProcessorNewNew_PrivFunc.cpp	\
+	./Algorithm/Deadreckoning/ProcessorNewNew/ProcessorMulti/NoEdit/ProcessorMulti_Algorithm_Deadreckoning_ProcessorNewNew_PrivCoreFunc.cpp	
 
 HEADERS += \
 	./Sensor/Encoder/Simulator/Edit/Simulator_Sensor_Encoder_ParamsData.h	\
@@ -78,5 +82,13 @@ HEADERS += \
 	./Algorithm/Deadreckoning/ProcessorNew/ProcessorMulti/Edit/ProcessorMulti_Algorithm_Deadreckoning_ProcessorNew_ParamsData.h	\
 	./Algorithm/Deadreckoning/ProcessorNew/ProcessorMulti/Edit/ProcessorMulti_Algorithm_Deadreckoning_ProcessorNew_Vars.h	\
 	./Algorithm/Deadreckoning/ProcessorNew/ProcessorMulti/NoEdit/ProcessorMulti_Algorithm_Deadreckoning_ProcessorNew_PrivFunc.h	\
-	./Algorithm/Deadreckoning/ProcessorNew/ProcessorMulti/NoEdit/ProcessorMulti_Algorithm_Deadreckoning_ProcessorNew_PrivCoreFunc.h	
+	./Algorithm/Deadreckoning/ProcessorNew/ProcessorMulti/NoEdit/ProcessorMulti_Algorithm_Deadreckoning_ProcessorNew_PrivCoreFunc.h	\
+	./Algorithm/DeadReckoning/ProcessorNewNew/ProcessorMulti/Edit/ProcessorMulti_Algorithm_DeadReckoning_ProcessorNewNew_ParamsData.h	\
+	./Algorithm/DeadReckoning/ProcessorNewNew/ProcessorMulti/Edit/ProcessorMulti_Algorithm_DeadReckoning_ProcessorNewNew_Vars.h	\
+	./Algorithm/DeadReckoning/ProcessorNewNew/ProcessorMulti/NoEdit/ProcessorMulti_Algorithm_DeadReckoning_ProcessorNewNew_PrivFunc.h	\
+	./Algorithm/DeadReckoning/ProcessorNewNew/ProcessorMulti/NoEdit/ProcessorMulti_Algorithm_DeadReckoning_ProcessorNewNew_PrivCoreFunc.h	\
+	./Algorithm/Deadreckoning/ProcessorNewNew/ProcessorMulti/Edit/ProcessorMulti_Algorithm_Deadreckoning_ProcessorNewNew_ParamsData.h	\
+	./Algorithm/Deadreckoning/ProcessorNewNew/ProcessorMulti/Edit/ProcessorMulti_Algorithm_Deadreckoning_ProcessorNewNew_Vars.h	\
+	./Algorithm/Deadreckoning/ProcessorNewNew/ProcessorMulti/NoEdit/ProcessorMulti_Algorithm_Deadreckoning_ProcessorNewNew_PrivFunc.h	\
+	./Algorithm/Deadreckoning/ProcessorNewNew/ProcessorMulti/NoEdit/ProcessorMulti_Algorithm_Deadreckoning_ProcessorNewNew_PrivCoreFunc.h	
 
