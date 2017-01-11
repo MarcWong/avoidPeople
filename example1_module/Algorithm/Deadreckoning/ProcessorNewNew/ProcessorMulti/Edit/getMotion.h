@@ -29,9 +29,9 @@ Coordinate2D calcForce(Coordinate2D robot_pos, std::vector<Coordinate2D> coordin
 }
 
 // robot coordination
-void getMotion(Coordinate2D robot_pos, std::vector<Coordinate2D> coordinate2DVec, short &speed, short &steer)
+void getMotion(std::vector<Coordinate2D> coordinate2DVec, short &speed, short &steer)
 {
-    Coordinate2D force = calcForce(robot_pos, coordinate2DVec);
+    Coordinate2D force = calcForce(Coordinate2D(0.0, 0.0), coordinate2DVec);
     double force_value = std::sqrt(force.x*force.x + force.y*force.y);
     if (force.x > 0)
         steer = STEER_LEFT_MAX;

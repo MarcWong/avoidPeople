@@ -11,11 +11,11 @@ TEMPLATE = lib
 
 DEFINES += EXAMPLE1_MODULE_LIBRARY
 
-SOURCES += example1_module.cpp \
-    getMotion.cpp
+SOURCES += example1_module.cpp
 
 HEADERS += example1_module.h\
-        example1_module_global.h
+        example1_module_global.h \
+    Algorithm/Deadreckoning/ProcessorNewNew/ProcessorMulti/Edit/getMotion.h
 LIBS += -L/usr/local/lib \
 -lopencv_core \
 -lopencv_imgproc \

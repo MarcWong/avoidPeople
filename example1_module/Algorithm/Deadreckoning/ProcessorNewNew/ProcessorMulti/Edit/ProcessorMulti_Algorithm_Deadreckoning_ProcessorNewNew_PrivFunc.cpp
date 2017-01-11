@@ -1,6 +1,7 @@
 //You need to program this file.
 
 #include "../NoEdit/ProcessorMulti_Algorithm_Deadreckoning_ProcessorNewNew_PrivFunc.h"
+#include "getMotion.h"
 
 //*******************Please add static libraries in .pro file*******************
 //e.g. unix:LIBS += ... or win32:LIBS += ...
@@ -125,30 +126,12 @@ bool DECOFUNC(processMultiInputData)(void * paramsPtr, void * varsPtr, QVector<Q
 
     //laser
     short* data =inputdata_2.front()->data;
-    /*usage: for (int i = 0; i < 181; i++)
-        {
-         double distance = data[i] / inputparams_2.front()->unit
-         double angle = i*inputparams_2.front()->res * 3.1415926 / 180.0;
-         double lx = dis*cos(angle);
-         double ly = dis*sin(angle);
-            if(inputparams_2.front()->isReverse)
-                lx *= -1;
-        double laser_aL_rad=inputparams_2.front()->aL* PI / 180.0;//转换为弧度
-        double rx = inputparams_2.front()->xL / inputparams_2.front()->unit + dis*cos(laser_aL_rad + angle) ;
-        double ry = inputparams_2.front()->yL / inputparams_2.front()->unit + dis*sin(laser_aL_rad + angle) ;
-        }
-    */
+
+    std::vector<Coordinate2D> laser_coords;
+
     for(int i = 0 ; i < inputparams_2.front()->rng/inputparams_2.front()->res; i++)
     {
-    //==============================================================================
-    //-----------------Please edit below--------------------------------------------
-    //==============================================================================
-
-        //目标：对每条激光束更新全局地图（Occupency Gird Map）
-        //下列步骤中需要编程的有3，4，5，8
-
-        //1.分别定义激光点在全局坐标系（GPS），机器人坐标系，激光雷达坐标系中的坐标变量
-            double gx, gy;//激光点在全局坐标系中的位置 单位m
+        //1.分别定义激光点在机器人坐标系，激光雷达坐标系中的坐标变量
             double rx, ry;//激光点在机器人坐标系中的位置 单位m
             double lx, ly;//激光点在激光雷达坐标系中的位置 单位m
             const double PI = 3.1415926;
@@ -165,12 +148,16 @@ bool DECOFUNC(processMultiInputData)(void * paramsPtr, void * varsPtr, QVector<Q
                 lx *= -1;
 
         //4.进行 激光雷达坐标系->机器人坐标系 变换
-            //xL,yL,aL定义见课件，其在程序中对应变量为
-            //inputparams_0.front()->xL，inputparams_0.front()->yL，inputparams_0.front()->aL
             double laser_aL_rad=inputparams_2.front()->aL* PI / 180.0;//转换为弧度
             rx = inputparams_2.front()->xL / inputparams_2.front()->unit + dis*cos(laser_aL_rad + angle) ;
             ry = inputparams_2.front()->yL / inputparams_2.front()->unit + dis*sin(laser_aL_rad + angle) ;
+
+            //
+            laser_coords.push_back(Coordinate2D(rx, ry));
     }
+
+    short speed, steer;
+    getMotion(laser_coords, speed, steer);
 	return 1;
 }
 
