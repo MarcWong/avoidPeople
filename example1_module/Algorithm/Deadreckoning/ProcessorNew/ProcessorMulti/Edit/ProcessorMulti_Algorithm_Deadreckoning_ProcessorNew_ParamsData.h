@@ -67,7 +67,13 @@ public:
 	}
 public:
 	//*******************Please add variables below*******************
-
+    double mapRes;
+    int ZeroX;
+    int ZeroY;
+    int mapWidth;
+    int mapHeight;
+    double logodd_occu;
+    double logodd_free;
 };
 
 //The Output Data is defined as below
@@ -99,11 +105,8 @@ public:
 	}
 public:
 	//*******************Please add variables below*******************
-    long timestamp;
-        //姿态定义
-        double x;
-        double y;
-        double orientation;
+        short steer;
+        short speed;
 };
 
 /*! \def ProcessorMulti_Algorithm_Deadreckoning_ProcessorNew_OUTPUTPORTSNUMBER

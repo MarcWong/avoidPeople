@@ -184,6 +184,9 @@ bool DECOFUNC(processMultiInputData)(void * paramsPtr, void * varsPtr, QVector<Q
             rx = inputparams_0.front()->xL / inputparams_0.front()->unit + dis*cos(laser_aL_rad + angle) ;
             ry = inputparams_0.front()->yL / inputparams_0.front()->unit + dis*sin(laser_aL_rad + angle) ;
 
+
+
+
         //5.进行 机器人坐标系->全局坐标系 变换
             //机器人航向角ori定义见课件，对应变量为inputdata_1.front()->ori
             double orien=inputdata_1.front()->ori;
