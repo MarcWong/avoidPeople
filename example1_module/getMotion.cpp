@@ -46,7 +46,8 @@ void getMotion(Coordinate2D robot_pos, std::vector<Coordinate2D> coordinate2DVec
 }
 
 // global coordination
-void getMotion(Coordinate2D robot_pos, double robot_ori, std::vector<Coordinate2D> coordinate2DVec, short &speed, short &steer)
+/*
+ * void getMotion(Coordinate2D robot_pos, double robot_ori, std::vector<Coordinate2D> coordinate2DVec, short &speed, short &steer)
 {
     std::vector<Coordinate2D> robot_coordinate2DVec;
     for (std::vector<Coordinate2D>::iterator it = coordinate2DVec.begin(), ; it != coordinate2DVec.end(); it++)
@@ -54,6 +55,7 @@ void getMotion(Coordinate2D robot_pos, double robot_ori, std::vector<Coordinate2
         double dx = robot_pos.x - it->x;
         double dy = robot_pos.y - it->y;
         double dis = std::sqrt(dx*dx + dy*dy);
-        robot_coordinate2DVec
+        Coordinate2D local;
     }
 }
+*/

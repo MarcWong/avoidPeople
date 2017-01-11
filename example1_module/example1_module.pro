@@ -11,7 +11,8 @@ TEMPLATE = lib
 
 DEFINES += EXAMPLE1_MODULE_LIBRARY
 
-SOURCES += example1_module.cpp
+SOURCES += example1_module.cpp \
+    getMotion.cpp
 
 HEADERS += example1_module.h\
         example1_module_global.h
