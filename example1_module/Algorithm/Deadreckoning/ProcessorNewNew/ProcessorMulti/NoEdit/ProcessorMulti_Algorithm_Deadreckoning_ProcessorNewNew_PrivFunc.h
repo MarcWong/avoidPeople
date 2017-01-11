@@ -1,27 +1,27 @@
 //You need not to modify this file.
 
-#ifndef PROCESSORMULTI_ALGORITHM_DEADRECKONING_PROCESSORNEW_PRIVFUNC_H
-#define PROCESSORMULTI_ALGORITHM_DEADRECKONING_PROCESSORNEW_PRIVFUNC_H
+#ifndef PROCESSORMULTI_ALGORITHM_DEADRECKONING_PROCESSORNEWNEW_PRIVFUNC_H
+#define PROCESSORMULTI_ALGORITHM_DEADRECKONING_PROCESSORNEWNEW_PRIVFUNC_H
 
 #include<RobotSDK_Global.h>
 
-/*! \defgroup ProcessorMulti_Algorithm_Deadreckoning_ProcessorNew_PrivFunc ProcessorMulti_Algorithm_Deadreckoning_ProcessorNew_PrivFunc
-	\ingroup ProcessorMulti_Algorithm_Deadreckoning_ProcessorNew
-	\brief ProcessorMulti_Algorithm_Deadreckoning_ProcessorNew_PrivFunc defines the PrivFunc in ProcessorMulti_Algorithm_Deadreckoning_ProcessorNew.
+/*! \defgroup ProcessorMulti_Algorithm_Deadreckoning_ProcessorNewNew_PrivFunc ProcessorMulti_Algorithm_Deadreckoning_ProcessorNewNew_PrivFunc
+	\ingroup ProcessorMulti_Algorithm_Deadreckoning_ProcessorNewNew
+	\brief ProcessorMulti_Algorithm_Deadreckoning_ProcessorNewNew_PrivFunc defines the PrivFunc in ProcessorMulti_Algorithm_Deadreckoning_ProcessorNewNew.
 */
 
-/*! \addtogroup ProcessorMulti_Algorithm_Deadreckoning_ProcessorNew_PrivFunc
+/*! \addtogroup ProcessorMulti_Algorithm_Deadreckoning_ProcessorNewNew_PrivFunc
 	@{
 */
 
-/*! \file ProcessorMulti_Algorithm_Deadreckoning_ProcessorNew_PrivFunc.h
-	 Defines the PrivFunc of ProcessorMulti_Algorithm_Deadreckoning_ProcessorNew
+/*! \file ProcessorMulti_Algorithm_Deadreckoning_ProcessorNewNew_PrivFunc.h
+	 Defines the PrivFunc of ProcessorMulti_Algorithm_Deadreckoning_ProcessorNewNew
 */
 
 //*******************Please add other headers below*******************
 
 
-#include "../Edit/ProcessorMulti_Algorithm_Deadreckoning_ProcessorNew_Vars.h"
+#include "../Edit/ProcessorMulti_Algorithm_Deadreckoning_ProcessorNewNew_Vars.h"
 
 /*! \def NODECONFIG
 	\brief Forcefully defines the NodeType_NodeClass.
@@ -29,9 +29,9 @@
 #ifdef NODECONFIG
 #undef NODECONFIG
 #endif
-#define NODECONFIG ProcessorMulti_Algorithm_Deadreckoning_ProcessorNew
+#define NODECONFIG ProcessorMulti_Algorithm_Deadreckoning_ProcessorNewNew
 
-/*! bool ProcessorMulti_Algorithm_Deadreckoning_ProcessorNew_setParamsVarsOpenNode(QString qstrConfigName, QString qstrNodeType, QString qstrNodeClass, QString qstrNodeName, void * paramsPtr, void * varsPtr)
+/*! bool ProcessorMulti_Algorithm_Deadreckoning_ProcessorNewNew_setParamsVarsOpenNode(QString qstrConfigName, QString qstrNodeType, QString qstrNodeClass, QString qstrNodeName, void * paramsPtr, void * varsPtr)
 	\brief [required] Function pointer type for interface function of setting node's parameters and variables while openning node.
 	\param [in] qstrConfigName The config-name of the node.
 	\param [in] qstrNodeType The type-name of the node.
@@ -43,7 +43,7 @@
 */
 extern "C" ROBOTSDK_OUTPUT bool DECOFUNC(setParamsVarsOpenNode)(QString qstrConfigName, QString qstrNodeType, QString qstrNodeClass, QString qstrNodeName, void * paramsPtr, void * varsPtr);
 
-/*! bool ProcessorMulti_Algorithm_Deadreckoning_ProcessorNew_handleVarsCloseNode(void * paramsPtr, void * varsPtr)
+/*! bool ProcessorMulti_Algorithm_Deadreckoning_ProcessorNewNew_handleVarsCloseNode(void * paramsPtr, void * varsPtr)
 	\brief [required] Function pointer type for interface function of handling node's variables while closing node.
 	\param [in] paramsPtr The parameters(\ref Node::paramsptr) for setting variables.
 	\param [in,out] varsPtr The variables(\ref Node::varsptr) to be handled
@@ -51,7 +51,7 @@ extern "C" ROBOTSDK_OUTPUT bool DECOFUNC(setParamsVarsOpenNode)(QString qstrConf
 */
 extern "C" ROBOTSDK_OUTPUT bool DECOFUNC(handleVarsCloseNode)(void * paramsPtr, void * varsPtr);
 
-/*! void ProcessorMulti_Algorithm_Deadreckoning_ProcessorNew_getInternalTrigger(void * paramsPtr, void * varsPtr, QObject * & internalTrigger, QString & internalTriggerSignal)
+/*! void ProcessorMulti_Algorithm_Deadreckoning_ProcessorNewNew_getInternalTrigger(void * paramsPtr, void * varsPtr, QObject * & internalTrigger, QString & internalTriggerSignal)
 	\brief [optional] Function pointer type for interface function of getting node's internal trigger.
 	\param [in] paramsPtr The node's parameters(\ref Node::paramsptr).
 	\param [in] varsPtr The node's variables(\ref Node::varsptr) that contains internal trigger.
@@ -62,7 +62,7 @@ extern "C" ROBOTSDK_OUTPUT bool DECOFUNC(handleVarsCloseNode)(void * paramsPtr, 
 */
 extern "C" ROBOTSDK_OUTPUT void DECOFUNC(getInternalTrigger)(void * paramsPtr, void * varsPtr, QObject * & internalTrigger, QString & internalTriggerSignal);
 
-/*! void ProcessorMulti_Algorithm_Deadreckoning_ProcessorNew_initializeOutputData(void * paramsPtr, void * varsPtr, boost::shared_ptr<void> & outputDataPtr)
+/*! void ProcessorMulti_Algorithm_Deadreckoning_ProcessorNewNew_initializeOutputData(void * paramsPtr, void * varsPtr, boost::shared_ptr<void> & outputDataPtr)
 	\brief [required] Function pointer type for interface function of initializing node's output data.
 	\param [in] paramsPtr The node's parameters(\ref Node::paramsptr).
 	\param [in] varsPtr The node's variables(\ref Node::varsptr).
@@ -72,7 +72,7 @@ extern "C" ROBOTSDK_OUTPUT void DECOFUNC(getInternalTrigger)(void * paramsPtr, v
 */
 extern "C" ROBOTSDK_OUTPUT void DECOFUNC(initializeOutputData)(void * paramsPtr, void * varsPtr, boost::shared_ptr<void> & outputDataPtr);
 
-/*! void ProcessorMulti_Algorithm_Deadreckoning_ProcessorNew_getMultiInputDataSize(void * paramsPtr, void * varsPtr, QList<int> & inputDataSize)
+/*! void ProcessorMulti_Algorithm_Deadreckoning_ProcessorNewNew_getMultiInputDataSize(void * paramsPtr, void * varsPtr, QList<int> & inputDataSize)
 	\brief [required] Function pointer type for interface function of getting multi input data size.
 	\param [in] paramsPtr The node's parameters(\ref Node::paramsptr).
 	\param [in] varsPtr The node's variables(\ref Node::varsptr).
@@ -80,7 +80,7 @@ extern "C" ROBOTSDK_OUTPUT void DECOFUNC(initializeOutputData)(void * paramsPtr,
 */
 extern "C" ROBOTSDK_OUTPUT void DECOFUNC(getMultiInputDataSize)(void * paramsPtr, void * varsPtr, QList<int> & inputDataSize);
 
-/*! bool ProcessorMulti_Algorithm_Deadreckoning_ProcessorNew_processMultiInputData(void * paramsPtr, void * varsPtr, QVector<QVector<void *> > inputParams, QVector<QVector<void *> > inputData, void * outputData, QList<int> & outputPortIndex)
+/*! bool ProcessorMulti_Algorithm_Deadreckoning_ProcessorNewNew_processMultiInputData(void * paramsPtr, void * varsPtr, QVector<QVector<void *> > inputParams, QVector<QVector<void *> > inputData, void * outputData, QList<int> & outputPortIndex)
 	\brief [required] Function pointer type for interface function of processing multi input data.
 	\param [in] paramsPtr The node's parameters(\ref Node::paramsptr).
 	\param [in] varsPtr The node's variables(\ref Node::varsptr).
