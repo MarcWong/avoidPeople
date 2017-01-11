@@ -138,6 +138,39 @@ bool DECOFUNC(processMultiInputData)(void * paramsPtr, void * varsPtr, QVector<Q
         double ry = inputparams_2.front()->yL / inputparams_2.front()->unit + dis*sin(laser_aL_rad + angle) ;
         }
     */
+    for(int i = 0 ; i < inputparams_2.front()->rng/inputparams_2.front()->res; i++)
+    {
+    //==============================================================================
+    //-----------------Please edit below--------------------------------------------
+    //==============================================================================
+
+        //目标：对每条激光束更新全局地图（Occupency Gird Map）
+        //下列步骤中需要编程的有3，4，5，8
+
+        //1.分别定义激光点在全局坐标系（GPS），机器人坐标系，激光雷达坐标系中的坐标变量
+            double gx, gy;//激光点在全局坐标系中的位置 单位m
+            double rx, ry;//激光点在机器人坐标系中的位置 单位m
+            double lx, ly;//激光点在激光雷达坐标系中的位置 单位m
+            const double PI = 3.1415926;
+        //2.若激光点返回测距值为0，则为无效数据，将其滤除。
+            if(inputparams_2.front()->data[i] == 0)
+                continue;
+
+        //3.计算激光点在激光雷达坐标系下的位置，并根据参数inputparams_0.front()->isReverse判断是否将lx取相反数。
+            double dis = inputparams_2.front()->data[i] / inputparams_2.front()->unit;//计算得到单个激光点的距离返回值
+            double angle = i * inputparams_2.front()->res * PI / 180.0;//计算得到当前处理激光束在激光雷达坐标系中角度
+            lx = dis*cos(angle);
+            ly = dis*sin(angle);
+            if(inputparams_2.front()->isReverse)
+                lx *= -1;
+
+        //4.进行 激光雷达坐标系->机器人坐标系 变换
+            //xL,yL,aL定义见课件，其在程序中对应变量为
+            //inputparams_0.front()->xL，inputparams_0.front()->yL，inputparams_0.front()->aL
+            double laser_aL_rad=inputparams_2.front()->aL* PI / 180.0;//转换为弧度
+            rx = inputparams_2.front()->xL / inputparams_2.front()->unit + dis*cos(laser_aL_rad + angle) ;
+            ry = inputparams_2.front()->yL / inputparams_2.front()->unit + dis*sin(laser_aL_rad + angle) ;
+    }
 	return 1;
 }
 
