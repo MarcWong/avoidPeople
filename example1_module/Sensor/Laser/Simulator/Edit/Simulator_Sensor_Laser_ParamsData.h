@@ -42,9 +42,15 @@ public:
 		\details ****Please add details below****
 
 	*/
-	Simulator_Sensor_Laser_Params() 
+    Simulator_Sensor_Laser_Params()
 	{
-		
+        unit = 0.1;
+        nearThres=3;
+        farThres=80;
+        isReverse=1;
+        aL=4.2;
+        xL=0.28;
+        yL=2.6;
 	}
 	/*! \fn ~Simulator_Sensor_Laser_Params()
 		\brief The destructor of Simulator_Sensor_Laser_Params. [required]
@@ -57,7 +63,13 @@ public:
 	}
 public:
 	//*******************Please add variables below*******************
-
+    float rng;
+    float res;
+    float unit;
+    int nearThres;
+    int farThres;
+    bool isReverse;
+    double aL,xL,yL;
 };
 
 //The Output Data is defined as below
@@ -76,12 +88,7 @@ public:
 	*/
 	Simulator_Sensor_Laser_Data() 
 	{
-        nearThres=3;
-        farThres=80;
-        isReverse=1;
-        aL=4.2;
-        xL=0.28;
-        yL=2.6;
+
 	}
 	/*! \fn ~Simulator_Sensor_Laser_Data()
 		\brief The destructor of Simulator_Sensor_Laser_Data. [required]
@@ -94,10 +101,7 @@ public:
 	}
 public:
 	//*******************Please add variables below*******************
-    int nearThres;
-    int farThres;
-    bool isReverse;
-    double aL,xL,yL;
+    short *data;
 };
 
 /*! \def Simulator_Sensor_Laser_OUTPUTPORTSNUMBER

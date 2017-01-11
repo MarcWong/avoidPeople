@@ -107,7 +107,37 @@ bool DECOFUNC(processMultiInputData)(void * paramsPtr, void * varsPtr, QVector<Q
 	Step 2 [optional]: determine the outputPortIndex. (if not, outputdata will be sent by all ports)
 	E.g. outputPortIndex=QList<int>()<<(outportindex1)<<(outportindex2)...
 	*/
-	
+
+    //0:encoder
+    //1:IMU
+    //2:Laser
+
+
+    //0.encoder
+    //inputdata_0.front()->pulse （int）为编码器最近帧脉冲数据，增加即小车向前走
+    //inputparams_0.front()->disPerPulse   (double)编码器单脉冲对应的距离 单位为m
+    //inputparams_0.front()->pulseMax	(int)编码器脉冲数最大数据
+
+
+    //1.IMU
+    //inputdata_1.front()->yaw    （double）为IMU最近帧航向角数据，单位为度，顺时针为正方向
+    double yaw = inputdata_1.front()->yaw;
+
+    //laser
+    short* data =inputdata_2.front()->data;
+    /*usage: for (int i = 0; i < 181; i++)
+        {
+         double distance = data[i] / inputparams_2.front()->unit
+         double angle = i*inputparams_2.front()->res * 3.1415926 / 180.0;
+         double lx = dis*cos(angle);
+         double ly = dis*sin(angle);
+            if(inputparams_2.front()->isReverse)
+                lx *= -1;
+        double laser_aL_rad=inputparams_2.front()->aL* PI / 180.0;//转换为弧度
+        double rx = inputparams_2.front()->xL / inputparams_2.front()->unit + dis*cos(laser_aL_rad + angle) ;
+        double ry = inputparams_2.front()->yL / inputparams_2.front()->unit + dis*sin(laser_aL_rad + angle) ;
+        }
+    */
 	return 1;
 }
 
