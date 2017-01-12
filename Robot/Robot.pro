@@ -14,7 +14,8 @@ DEFINES += ROBOT_LIBRARY
 SOURCES += robot.cpp
 
 HEADERS += robot.h\
-        robot_global.h
+        robot_global.h \
+    Processor/Line/ProcessorMulti/Edit/getMotion.h
 
 unix {
     target.path = /usr/lib

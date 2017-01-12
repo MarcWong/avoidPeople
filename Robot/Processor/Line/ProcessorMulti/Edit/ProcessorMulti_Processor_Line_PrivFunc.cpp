@@ -1,6 +1,7 @@
 //You need to program this file.
 
 #include "../NoEdit/ProcessorMulti_Processor_Line_PrivFunc.h"
+#include "getMotion.h"
 
 //*******************Please add static libraries in .pro file*******************
 //e.g. unix:LIBS += ... or win32:LIBS += ...
@@ -106,6 +107,7 @@ bool DECOFUNC(processMultiInputData)(void * paramsPtr, void * varsPtr, QVector<Q
     SensorTimer_Sensor_URG_Data *laser = inputdata_1.front();
     outputdata->x = odom->x;
     outputdata->y = odom->y;
+    std::vector<Coordinate2D> ob_vector;
     outputdata->theta = odom->orientation;
 
     outputdata->obPoints.clear();
@@ -119,6 +121,9 @@ bool DECOFUNC(processMultiInputData)(void * paramsPtr, void * varsPtr, QVector<Q
             if (length < 0.5) {
                 outputdata->obPoints.append(cv::Point2d(x, y));
             }
+            if (length < 2.0) {
+                ob_vector.push_back(Coordinate2D(x, y));
+            }
             outputdata->laserPoints.append(cv::Point2d(x, y));
         }
     }
@@ -129,11 +134,14 @@ bool DECOFUNC(processMultiInputData)(void * paramsPtr, void * varsPtr, QVector<Q
         outputdata->safeZone.append(cv::Point2d(x, y));
     }
 
+    short steer, speed;
+    getMotion(ob_vector, speed, steer);
+
     char dataput[10];
     dataput[0] = 0xF8;
     dataput[1] = 4;
-    *(short*)&dataput[2] = (short)0;
-    *(short*)&dataput[4] = (short)outputdata->obPoints.size() > 0 ? 0 : 60;
+    *(short*)&dataput[2] = steer; //(short)0;
+    *(short*)&dataput[4] = speed; //(short)outputdata->obPoints.size() > 0 ? 0 : 60;
     dataput[6] = 0x8F;
     outputdata->datagram.append(dataput, 7);
 	return 1;
