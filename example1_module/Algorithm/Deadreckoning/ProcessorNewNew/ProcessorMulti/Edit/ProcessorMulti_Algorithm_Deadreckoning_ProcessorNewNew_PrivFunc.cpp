@@ -158,6 +158,8 @@ bool DECOFUNC(processMultiInputData)(void * paramsPtr, void * varsPtr, QVector<Q
 
     short speed, steer;
     getMotion(laser_coords, speed, steer);
+    outputdata->speed = speed;
+    outputdata->steer = steer;
 	return 1;
 }
 

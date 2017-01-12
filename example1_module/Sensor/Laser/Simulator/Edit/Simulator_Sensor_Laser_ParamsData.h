@@ -44,6 +44,8 @@ public:
 	*/
     Simulator_Sensor_Laser_Params()
 	{
+        rng = 1;
+        res = 0.1;
         unit = 0.1;
         nearThres=3;
         farThres=80;

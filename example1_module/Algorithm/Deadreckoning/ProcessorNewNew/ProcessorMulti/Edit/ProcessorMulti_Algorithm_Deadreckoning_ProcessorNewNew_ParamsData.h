@@ -102,7 +102,8 @@ public:
 	}
 public:
 	//*******************Please add variables below*******************
-
+    short speed;
+    short steer;
 };
 
 /*! \def ProcessorMulti_Algorithm_Deadreckoning_ProcessorNewNew_OUTPUTPORTSNUMBER
