@@ -136,11 +136,11 @@ bool DECOFUNC(processMultiInputData)(void * paramsPtr, void * varsPtr, QVector<Q
             double lx, ly;//激光点在激光雷达坐标系中的位置 单位m
             const double PI = 3.1415926;
         //2.若激光点返回测距值为0，则为无效数据，将其滤除。
-            if(inputparams_2.front()->data[i] == 0)
+            if(inputdata_2.front()->data[i] == 0)
                 continue;
 
         //3.计算激光点在激光雷达坐标系下的位置，并根据参数inputparams_0.front()->isReverse判断是否将lx取相反数。
-            double dis = inputparams_2.front()->data[i] / inputparams_2.front()->unit;//计算得到单个激光点的距离返回值
+            double dis = inputdata_2.front()->data[i] / inputparams_2.front()->unit;//计算得到单个激光点的距离返回值
             double angle = i * inputparams_2.front()->res * PI / 180.0;//计算得到当前处理激光束在激光雷达坐标系中角度
             lx = dis*cos(angle);
             ly = dis*sin(angle);

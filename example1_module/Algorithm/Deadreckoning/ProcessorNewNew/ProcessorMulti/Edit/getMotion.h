@@ -1,6 +1,6 @@
 #include <cmath>
 #include <vector>
-
+using namespace std;
 #define STEER_LEFT_MAX -255
 #define STEER_RIGHT_MAX 255
 #define SPEED_MIN -50
@@ -40,9 +40,9 @@ void getMotion(std::vector<Coordinate2D> coordinate2DVec, short &speed, short &s
     else
         steer = STEER_RIGHT_MAX;
     if (force.y >= 0)
-        speed = SPEED_MAX * std::min(1, force_value/FORCE_MAX);
+        speed = SPEED_MAX * std::min(1.0, force_value/FORCE_MAX);
     else
-        speed = SPEED_MIN * std::min(1, force_value/FORCE_MAX);
+        speed = SPEED_MIN * std::min(1.0, force_value/FORCE_MAX);
 }
 
 // global coordination
