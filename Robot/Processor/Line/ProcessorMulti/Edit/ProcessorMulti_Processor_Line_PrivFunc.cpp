@@ -122,7 +122,7 @@ bool DECOFUNC(processMultiInputData)(void * paramsPtr, void * varsPtr, QVector<Q
                 outputdata->obPoints.append(cv::Point2d(x, y));
             }
             if (length < 2.0) {
-                ob_vector.push_back(Coordinate2D(x, y));
+                ob_vector.push_back(Coordinate2D(y, x));
             }
             outputdata->laserPoints.append(cv::Point2d(x, y));
         }
@@ -135,7 +135,8 @@ bool DECOFUNC(processMultiInputData)(void * paramsPtr, void * varsPtr, QVector<Q
     }
 
     short steer, speed;
-    getMotion(ob_vector, speed, steer);
+    double forcex, forcey;
+    getMotion(ob_vector, speed, steer, forcex, forcey);
 
     char dataput[10];
     dataput[0] = 0xF8;
@@ -146,6 +147,8 @@ bool DECOFUNC(processMultiInputData)(void * paramsPtr, void * varsPtr, QVector<Q
     outputdata->datagram.append(dataput, 7);
     outputdata->speed = speed;
     outputdata->steer = steer;
+    outputdata->forcex = forcex;
+    outputdata->forcey = forcey;
 	return 1;
 }
 

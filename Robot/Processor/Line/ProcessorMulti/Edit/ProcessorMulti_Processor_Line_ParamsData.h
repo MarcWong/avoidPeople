@@ -103,6 +103,7 @@ public:
 	//*******************Please add variables below*******************
     double x, y, theta;
     short speed,steer;
+    double forcex,forcey;
     QVector<cv::Point2d> laserPoints;
     QVector<cv::Point2d> obPoints;
     QVector<cv::Point2d> safeZone;

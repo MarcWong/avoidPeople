@@ -96,7 +96,11 @@ bool DECOFUNC(processMonoDrainData)(void * paramsPtr, void * varsPtr, QVector<vo
     sprintf(str,"speed= %d",draindata.front()->speed);
     cv::putText(toShow, str, cv::Point(40, 40), CV_FONT_NORMAL, 1.0, CV_RGB(255, 255, 0));
     sprintf(str,"steer= %d",draindata.front()->steer);
-    cv::putText(toShow, str, cv::Point(40, 100), CV_FONT_NORMAL, 1.0, CV_RGB(255, 255, 0));
+    cv::putText(toShow, str, cv::Point(40, 80), CV_FONT_NORMAL, 1.0, CV_RGB(255, 255, 0));
+    sprintf(str,"forcex= %lf",draindata.front()->forcex);
+    cv::putText(toShow, str, cv::Point(40, 120), CV_FONT_NORMAL, 1.0, CV_RGB(255, 255, 0));
+    sprintf(str,"forcey= %lf",draindata.front()->forcey);
+    cv::putText(toShow, str, cv::Point(40, 160), CV_FONT_NORMAL, 1.0, CV_RGB(255, 255, 0));
 
     for (int i = 0; i < data->safeZone.size(); i++) {
         int x = data->safeZone[i].x * params->scale + params->offsetWidth;

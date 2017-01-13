@@ -1,14 +1,15 @@
 #include <cmath>
 #include <vector>
 using namespace std;
-#define STEER_LEFT_MAX -255
-#define STEER_RIGHT_MAX 255
+#define STEER_LEFT_MAX -200
+#define STEER_RIGHT_MAX 200
 #define SPEED_MIN -50
 #define SPEED_MAX 50
 #define FORCE_MAX 250.0
 #define FORCE_INIT 140.0
 #define PI 3.1415926
-#define turn_underhold 30.0
+#define turn_underhold 0
+#define cons 1.0
 struct Coordinate2D {
     double x;
     double y;
@@ -24,7 +25,7 @@ Coordinate2D calcForce(Coordinate2D robot_pos, std::vector<Coordinate2D> coordin
         double dx = robot_pos.x - it->x;
         double dy = robot_pos.y - it->y;
         double dis_squared = dx*dx + dy*dy;
-        double force_value = 1/dis_squared;
+        double force_value = cons/dis_squared;
 
         //if(force > thres)
         //{
@@ -36,11 +37,11 @@ Coordinate2D calcForce(Coordinate2D robot_pos, std::vector<Coordinate2D> coordin
 }
 
 // robot coordination
-void getMotion(vector<Coordinate2D> coordinate2DVec, short &speed, short &steer)
+void getMotion(vector<Coordinate2D> coordinate2DVec, short &speed, short &steer, double &forcex, double &forcey)
 {
     Coordinate2D force = calcForce(Coordinate2D(0.0, 0.0), coordinate2DVec);
     double force_value = sqrt(force.x*force.x + force.y*force.y);
-    double angle = fabs(atan(force.y/force.x));
+    double angle = atan(fabs(force.x/force.y));
     if (force.x > turn_underhold)
         steer = STEER_RIGHT_MAX * angle /PI * 2;
     else if (force.x < -turn_underhold)
@@ -53,6 +54,8 @@ void getMotion(vector<Coordinate2D> coordinate2DVec, short &speed, short &steer)
         speed = SPEED_MAX * min(1.0, speed_underhold);
     else
         speed = SPEED_MIN * min(1.0, speed_underhold);
+    forcex = force.x;
+    forcey = force.y;
 }
 
 // global coordination
