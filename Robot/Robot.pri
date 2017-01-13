@@ -23,10 +23,8 @@ SOURCES += \
 	./Sensor/URG/StorageMono/NoEdit/StorageMono_Sensor_URG_PrivCoreFunc.cpp	\
 	./Sensor/URG/Simulator/Edit/Simulator_Sensor_URG_PrivFunc.cpp	\
 	./Sensor/URG/Simulator/NoEdit/Simulator_Sensor_URG_PrivCoreFunc.cpp	\
-	./Processor/Line/ProcessorMulti/Edit/ProcessorMulti_Processor_Line_PrivFunc.cpp	\
-	./Processor/Line/ProcessorMulti/NoEdit/ProcessorMulti_Processor_Line_PrivCoreFunc.cpp	\
-	./Processor/Line/VisualizationMono/Edit/VisualizationMono_Processor_Line_PrivFunc.cpp	\
-	./Processor/Line/VisualizationMono/NoEdit/VisualizationMono_Processor_Line_PrivCoreFunc.cpp	
+        ./Processor/Action/ProcessorMulti/Edit/ProcessorMulti_Processor_Action_PrivFunc.cpp	\
+	./Processor/Action/ProcessorMulti/NoEdit/ProcessorMulti_Processor_Action_PrivCoreFunc.cpp	
 
 HEADERS += \
 	./Sensor/xtion/SensorTimer/Edit/SensorTimer_Sensor_xtion_ParamsData.h	\
@@ -76,13 +74,9 @@ HEADERS += \
 	./Sensor/URG/Simulator/Edit/Simulator_Sensor_URG_ParamsData.h	\
 	./Sensor/URG/Simulator/Edit/Simulator_Sensor_URG_Vars.h	\
 	./Sensor/URG/Simulator/NoEdit/Simulator_Sensor_URG_PrivFunc.h	\
-	./Sensor/URG/Simulator/NoEdit/Simulator_Sensor_URG_PrivCoreFunc.h	\
-	./Processor/Line/ProcessorMulti/Edit/ProcessorMulti_Processor_Line_ParamsData.h	\
-	./Processor/Line/ProcessorMulti/Edit/ProcessorMulti_Processor_Line_Vars.h	\
-	./Processor/Line/ProcessorMulti/NoEdit/ProcessorMulti_Processor_Line_PrivFunc.h	\
-	./Processor/Line/ProcessorMulti/NoEdit/ProcessorMulti_Processor_Line_PrivCoreFunc.h	\
-	./Processor/Line/VisualizationMono/Edit/VisualizationMono_Processor_Line_ParamsData.h	\
-	./Processor/Line/VisualizationMono/Edit/VisualizationMono_Processor_Line_Vars.h	\
-	./Processor/Line/VisualizationMono/NoEdit/VisualizationMono_Processor_Line_PrivFunc.h	\
-	./Processor/Line/VisualizationMono/NoEdit/VisualizationMono_Processor_Line_PrivCoreFunc.h	
+        ./Sensor/URG/Simulator/NoEdit/Simulator_Sensor_URG_PrivCoreFunc.h	\
+	./Processor/Action/ProcessorMulti/Edit/ProcessorMulti_Processor_Action_ParamsData.h	\
+	./Processor/Action/ProcessorMulti/Edit/ProcessorMulti_Processor_Action_Vars.h	\
+	./Processor/Action/ProcessorMulti/NoEdit/ProcessorMulti_Processor_Action_PrivFunc.h	\
+	./Processor/Action/ProcessorMulti/NoEdit/ProcessorMulti_Processor_Action_PrivCoreFunc.h	
 

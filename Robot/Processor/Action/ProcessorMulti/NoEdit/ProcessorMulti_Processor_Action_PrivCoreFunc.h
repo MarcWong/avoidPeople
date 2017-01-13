@@ -1,32 +1,32 @@
 //You need not to modify this file.
 
-/*! \defgroup VisualizationMono_Processor_Line VisualizationMono_Processor_Line
-	\ingroup VisualizationMono_Library Processor_Line_NodeClass
-	\brief VisualizationMono_Processor_Line defines the Processor_Line in VisualizationMono.
+/*! \defgroup ProcessorMulti_Processor_Action ProcessorMulti_Processor_Action
+	\ingroup ProcessorMulti_Library Processor_Action_NodeClass
+	\brief ProcessorMulti_Processor_Action defines the Processor_Action in ProcessorMulti.
 */
 
-#ifndef VISUALIZATIONMONO_PROCESSOR_LINE_PRIVCOREFUNC_H
-#define VISUALIZATIONMONO_PROCESSOR_LINE_PRIVCOREFUNC_H
+#ifndef PROCESSORMULTI_PROCESSOR_ACTION_PRIVCOREFUNC_H
+#define PROCESSORMULTI_PROCESSOR_ACTION_PRIVCOREFUNC_H
 
 #include<RobotSDK_Global.h>
 
-/*! \defgroup VisualizationMono_Processor_Line_PrivCoreFunc VisualizationMono_Processor_Line_PrivCoreFunc
-	\ingroup VisualizationMono_Processor_Line
-	\brief VisualizationMono_Processor_Line_PrivCoreFunc defines the PrivCoreFunc in VisualizationMono_Processor_Line.
+/*! \defgroup ProcessorMulti_Processor_Action_PrivCoreFunc ProcessorMulti_Processor_Action_PrivCoreFunc
+	\ingroup ProcessorMulti_Processor_Action
+	\brief ProcessorMulti_Processor_Action_PrivCoreFunc defines the PrivCoreFunc in ProcessorMulti_Processor_Action.
 */
 
-/*! \addtogroup VisualizationMono_Processor_Line_PrivCoreFunc
+/*! \addtogroup ProcessorMulti_Processor_Action_PrivCoreFunc
 	@{
 */
 
-/*! \file VisualizationMono_Processor_Line_PrivCoreFunc.h
-	 Defines the PrivCoreFunc of VisualizationMono_Processor_Line
+/*! \file ProcessorMulti_Processor_Action_PrivCoreFunc.h
+	 Defines the PrivCoreFunc of ProcessorMulti_Processor_Action
 */
 
 //*******************Please add other headers below*******************
 
 
-#include "../Edit/VisualizationMono_Processor_Line_Vars.h"
+#include "../Edit/ProcessorMulti_Processor_Action_Vars.h"
 
 /*! \def NODECONFIG
 	\brief Forcefully defines the NodeType_NodeClass.
@@ -34,16 +34,16 @@
 #ifdef NODECONFIG
 #undef NODECONFIG
 #endif
-#define NODECONFIG VisualizationMono_Processor_Line
+#define NODECONFIG ProcessorMulti_Processor_Action
 
-/*! void VisualizationMono_Processor_Line_getPortsSize(QList<int> & inputPortsSize, int & outputPortsNumber)
+/*! void ProcessorMulti_Processor_Action_getPortsSize(QList<int> & inputPortsSize, int & outputPortsNumber)
 	\brief [required] Function pointer type for interface function of getting node's port(s)' size.
 	\param [out] inputPortsSize The size of each input port's data buffer.
 	\param [out] outputPortsNumber The number of output ports.
 */
 extern "C" ROBOTSDK_OUTPUT void DECOFUNC(getPortsSize)(QList<int> & inputPortsSize, int & outputPortsNumber);
 
-/*! void VisualizationMono_Processor_Line_initializeParams(boost::shared_ptr<void> & paramsPtr)
+/*! void ProcessorMulti_Processor_Action_initializeParams(boost::shared_ptr<void> & paramsPtr)
 	\brief [required] Function pointer type for interface function of initializing node's parameters.
 	\param [out] paramsPtr The parameters embelished by boost::shared_pointer<void>.
 	\details To initialize parameters:
@@ -51,7 +51,7 @@ extern "C" ROBOTSDK_OUTPUT void DECOFUNC(getPortsSize)(QList<int> & inputPortsSi
 */
 extern "C" ROBOTSDK_OUTPUT void DECOFUNC(initializeParams)(boost::shared_ptr<void> & paramsPtr);
 
-/*! void VisualizationMono_Processor_Line_initializeVars(boost::shared_ptr<void> & varsPtr)
+/*! void ProcessorMulti_Processor_Action_initializeVars(boost::shared_ptr<void> & varsPtr)
 	\brief [required] Function pointer type for interface function of initializing node's variables.
 	\param [out] varsPtr The variables embelished by boost::shared_pointer<void>.
 	\details To initialize variables:
