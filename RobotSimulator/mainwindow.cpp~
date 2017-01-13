@@ -9,21 +9,21 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     QString config = "config.xml";
-    SensorTimer *xtion = new SensorTimer("Robot", "Sensor_xtion", "xtion", config, QTime(), 1);
+    SensorTimer *xtion = new Simulator("Robot", "Sensor_xtion", "xtion", config, QTime(), 1);
     xtion->setOutputNodesName(QStringList() << "xtionVis");
 
     VisualizationMono *xtionVis = new VisualizationMono("Robot", "Sensor_xtion", "xtionVis", config);
     xtionVis->setInputNodesName(QStringList() << "xtion");
     xtionVis->connectExternalTrigger(0, DRAINSLOT);
 
-    SensorTimer *urg = new SensorTimer("Robot", "Sensor_URG", "urg", config, QTime(), 1);
+    SensorTimer *urg = new Simulator("Robot", "Sensor_URG", "urg", config, QTime(), 1);
     urg->setOutputNodesName(QStringList() << "urgVis;obDetector");
 
     VisualizationMono *urgVis = new VisualizationMono("Robot", "Sensor_URG", "urgVis", config);
     urgVis->setInputNodesName(QStringList() << "urg");
     urgVis->connectExternalTrigger(0, DRAINSLOT);
 
-    SensorTimer *odom = new SensorTimer("Robot", "Sensor_EncoderIMU", "odom", config, QTime(), 1);
+    SensorTimer *odom = new Simulator("Robot", "Sensor_EncoderIMU", "odom", config, QTime(), 1);
     odom->setOutputNodesName(QStringList() << "odomVis;obDetector");
 
     VisualizationMono *odomVis = new VisualizationMono("Robot", "Sensor_EncoderIMU", "odomVis", config);

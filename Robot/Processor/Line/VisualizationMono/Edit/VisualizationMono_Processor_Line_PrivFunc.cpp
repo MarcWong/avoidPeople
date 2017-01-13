@@ -89,9 +89,14 @@ bool DECOFUNC(processMonoDrainData)(void * paramsPtr, void * varsPtr, QVector<vo
     toShow = cv::Mat::zeros(params->height, params->width, CV_8UC3);
 
     ProcessorMulti_Processor_Line_Data *data = draindata.front();
-    if (data->obPoints.size() == 0) {
-        cv::putText(toShow, "Safe", cv::Point(40, 40), CV_FONT_NORMAL, 1.5, CV_RGB(0, 255, 0));
-    }
+    //if (data->obPoints.size() == 0) {
+    //    cv::putText(toShow, "Safe", cv::Point(40, 40), CV_FONT_NORMAL, 1.5, CV_RGB(0, 255, 0));
+    //}
+    char str[20];
+    sprintf(str,"speed= %d",draindata.front()->speed);
+    cv::putText(toShow, str, cv::Point(40, 40), CV_FONT_NORMAL, 1.0, CV_RGB(255, 255, 0));
+    sprintf(str,"steer= %d",draindata.front()->steer);
+    cv::putText(toShow, str, cv::Point(40, 100), CV_FONT_NORMAL, 1.0, CV_RGB(255, 255, 0));
 
     for (int i = 0; i < data->safeZone.size(); i++) {
         int x = data->safeZone[i].x * params->scale + params->offsetWidth;
@@ -112,6 +117,7 @@ bool DECOFUNC(processMonoDrainData)(void * paramsPtr, void * varsPtr, QVector<vo
         if (x >= 0 && x < params->width && y >= 0 && y < params->height)
             toShow.at<cv::Vec3b>(y, x) = cv::Vec3b(255, 0, 0);
     }
+
     cv::circle(toShow, cv::Point(params->offsetWidth, params->offsetHeight), 1, CV_RGB(255, 255, 0));
 
     QImage qColorImg((const uchar*)toShow.data, toShow.cols, toShow.rows,

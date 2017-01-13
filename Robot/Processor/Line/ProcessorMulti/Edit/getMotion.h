@@ -8,7 +8,7 @@ using namespace std;
 #define FORCE_MAX 250.0
 #define FORCE_INIT 140.0
 #define PI 3.1415926
-#define turn_underhold 60.0
+#define turn_underhold 30.0
 struct Coordinate2D {
     double x;
     double y;

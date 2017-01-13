@@ -144,6 +144,8 @@ bool DECOFUNC(processMultiInputData)(void * paramsPtr, void * varsPtr, QVector<Q
     *(short*)&dataput[4] = speed; //(short)outputdata->obPoints.size() > 0 ? 0 : 60; //speed
     dataput[6] = 0x8F;
     outputdata->datagram.append(dataput, 7);
+    outputdata->speed = speed;
+    outputdata->steer = steer;
 	return 1;
 }
 
